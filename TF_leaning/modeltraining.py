@@ -21,7 +21,7 @@ loss_fn(y_train[:1], predictions).numpy()
 
 model.compile(optimizer='adam', loss=loss_fn, metrics=['accuracy'])
 
-model.fit(x_train,y_train,epochs=15)
+model.fit(x_train,y_train,epochs=50)
 model.evaluate(x_test,y_test,verbose=2)
 
 propability_model = tf.keras.Sequential([
