@@ -6,7 +6,7 @@ img0 = Image.open("/workspaces/School/MNIST_dataset_example0.png").convert('L')
 imgarr = numpy.asarray(img0)
 imgarr = imgarr/255
 print(imgarr)
-#img0.reshape(28,28)
+imgarr.reshape(28,28)
 #img0 = img0[numpy.newaxis,:,:]
 
 mnist = tf.keras.datasets.mnist
@@ -28,7 +28,7 @@ loss_fn(y_train[:1], predictions).numpy()
 
 model.compile(optimizer='adam', loss=loss_fn, metrics=['accuracy'])
 
-model.fit(x_train,y_train,epochs=2)
+model.fit(x_train,y_train,epochs=15)
 model.evaluate(x_test,y_test,verbose=2)
 
 propability_model = tf.keras.Sequential([
@@ -38,8 +38,10 @@ propability_model = tf.keras.Sequential([
 
 #propability_model(x_test[:5])
 
+propability_model.save("my_model.keras")
 
-prediction = model.predict(imgarr)
+
+prediction = propability_model.predict(imgarr)
 print(prediction)
 numpy.argmax(prediction)
 
