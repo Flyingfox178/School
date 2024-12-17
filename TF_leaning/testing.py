@@ -2,13 +2,6 @@ import tensorflow as tf
 import numpy
 from PIL import Image
 
-img0 = Image.open("/workspaces/School/MNIST_dataset_example0.png").convert('L')
-imgarr = numpy.asarray(img0)
-imgarr = imgarr/255
-print(imgarr)
-imgarr.reshape(28,28)
-#img0 = img0[numpy.newaxis,:,:]
-
 mnist = tf.keras.datasets.mnist
 
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
@@ -36,14 +29,4 @@ propability_model = tf.keras.Sequential([
     tf.keras.layers.Softmax()
     ])
 
-#propability_model(x_test[:5])
-
 propability_model.save("my_model.keras")
-
-
-prediction = propability_model.predict(imgarr)
-print(prediction)
-numpy.argmax(prediction)
-
-#print(x_test[5])
-#print(x_test[6])
