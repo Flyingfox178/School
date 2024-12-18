@@ -1,0 +1,16 @@
+Flatten:
+    Flattens the input Tensor to only one array
+
+    Example:
+    x.shape = (10, 64)
+    y = tensorflow.keras.layers.Flatten()(x)
+    y.shape = (None, 640)
+    
+Dense:
+    https://wandb.ai/ayush-thakur/keras-dense/reports/Keras-Dense-Layer-How-to-Use-It-Correctly--Vmlldzo0MjAzNDY1
+
+Dropout:
+    Changes random values from the input Tensor to 0 to prevent overfitting (That only the training images are valid)
+
+    Example:
+    (0,1,0,0,1,0,1,0,1,1,1,0) -> (0,1,0,0,0,0,1,0,1,0,1,0)
