@@ -1,5 +1,5 @@
 Flatten:
-    Flattens the input Tensor to only one array
+    Flattens the input Tensor to only one dimensional array
 
     Example:
     x.shape = (10, 64)
